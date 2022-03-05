@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+{{#users}}
+<form action="/add">
+
+    <!-- Login input box -->
+    <label for="login">Login:</label><br>
+    <input type="text" id="login" name="login" value="{{login}}"><br>
+    <!--Since it is edit page, all the input boxes are prefilled with current value for this user-->
+
+    <!-- Password input box -->
+    <label for="password">Password:</label><br>
+    <input type="password" id="MyPass" name="password" value="{{password}}" ><br>
+
+    <!-- An element to toggle between password visibility -->
+    <br><input type="checkbox" onclick="showPass()">Show Password<br>
+
+    <!-- First name input box -->
+    <label for="name">First name:</label><br>
+    <input type="text" id="name" name="name" value="{{name}}"><br>
+
+    <!-- Last name input box -->
+    <label for="surname">Last name:</label><br>
+    <input type="text" id="surname" name="surname" value="{{surname}}"><br><br>
+
+    <!-- Birthday input box -->
+    <label for="birthday">Birth date:</label><br>
+    <input type="date" id="birthday" name="birthday" value="{{birthday}}"><br><br>
+
+    <!-- Address input box -->
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address" value="{{address}}"><br><br>
+
+    <!-- Personal information input box -->
+    <textarea rows = "5" cols = "60" name = "PersonalInfo" value="{{PersonalInfo}}">
+         </textarea><br>
+
+    <!-- Radio buttons for gender -->
+    <input type="radio" id="Male" name="gender" value="Male">
+    <label for="Male">Male</label><br>
+
+    <input type="radio" id="Female" name="gender" value="Female">
+    <label for="Female">Female</label><br>
+
+    <input type="submit" value="Save">
+{{/users}}
+</form>
+<!-- Script for password toggling -->
+<script>
+function showPass() {
+  var x = document.getElementById("MyPass");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+</body>
+</html>
+

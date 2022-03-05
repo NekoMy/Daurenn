@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <link rel="stylesheet" href="static.css/style.css" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<h2>List of users</h2>
+<form action="/filter">
+    <!-- Login input box -->
+    <label for="Filter">Filter:</label><br>
+    <input type="filter" id="filter" name="filter" placeholder="Search"><br>
+    <!-- Password input box -->
+    <input type="submit" value="Search">
+</form>
+<!--Table with user information-->
+<table border="2" width="50%" cellpadding="2">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Birth date</th>
+        <th>Address</th>
+        <th>Personal information</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <!--Data for tables is imported from model "users"-->
+    {{#users}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{gender}}</td>
+        <td>{{birthday}}</td>
+        <td>{{address}}</td>
+        <td>{{PersonalInfo}}</td>
+        <!--Edit/Delete for specific users-->
+        <td><button onclick="window.location.href='edit?id={{id}}'">Edit</td>
+        <td><button onclick="window.location.href='delete?id={{id}}'">Delete</td>
+    </tr>
+    {{/users}}
+</table>
+<!--Buttons to add new user and go to main page-->
+<button onclick="window.location.href='index'">Main page</button>
+<button onclick="window.location.href='signup'">Add new user</button>
+</body>
+</html>

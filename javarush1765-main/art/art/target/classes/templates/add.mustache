@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registartion Page</title>
+</head>
+<body>
+<form action="/add">
+    <!-- Login input box -->
+    <label for="login">Login:</label><br>
+    <input type="text" id="login" name="login" placeholder="Login"><br>
+    <!-- Password input box -->
+    <label for="password">Password:</label><br>
+    <input type="password" id="MyPass" name="password" placeholder="Password"><br>
+
+    <!-- An element to toggle between password visibility -->
+    <br><input type="checkbox" onclick="showPass()">Show Password<br>
+
+    <!-- First name input box -->
+    <label for="name">First name:</label><br>
+    <input type="text" id="name" name="name" placeholder="First Name"><br>
+
+    <!-- Last name input box -->
+    <label for="surname">Last name:</label><br>
+    <input type="text" id="surname" name="surname" placeholder="Last Name"><br><br>
+
+    <!-- Birthday input box -->
+    <label for="birthday">Birth date:</label><br>
+    <input type="date" id="birthday" name="birthday"><br><br>
+
+    <!-- Address input box -->
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address" placeholder="Lenin st. 274, apartment 35"><br><br>
+
+    <!-- Personal information input box -->
+    <textarea rows = "5" cols = "60" name = "PersonalInfo" placeholder="Enter your personal information">
+         </textarea><br>
+
+    <!-- Radio buttons for gender -->
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+<!-- Script for password toggling -->
+<script>
+function showPass() {
+  var x = document.getElementById("MyPass");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+</body>
+</html>
